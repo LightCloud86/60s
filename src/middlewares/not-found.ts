@@ -7,13 +7,11 @@ export function notFound(): Middleware {
   return async (ctx, next) => {
     await next()
 
-    ctx.response.status = 404
-    ctx.response.body = Common.buildJson(
-      null,
-      404,
-      `404, 接口被吃掉了，请检查！应用接口需要带上版本号，如 /v2/60s 而不是 /60s。${COMMON_MSG}`,
-    )
+    const res = await fetch('https://static.2025202.xyz/403.html')
+    const html = await res.text()
 
-    return
+    ctx.response.status = 403
+    ctx.response.type = 'text/html; charset=utf-8'
+    ctx.response.body = html
   }
 }
