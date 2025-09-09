@@ -31,10 +31,6 @@ class ServiceBing {
           break
 
         case 'image':
-          ctx.response.redirect(data.cover || '')
-          break
-
-        case 'uhd':
           ctx.response.redirect(data.cover_4k || '')
           break
 
