@@ -7,7 +7,7 @@ export function notFound(): Middleware {
   return async (ctx, next) => {
     await next()
 
-    const res = await fetch('https://static.2025202.xyz/403.html')
+    const res = await fetch('https://static.2025202.xyz/403.htm')
     const html = await res.text()
 
     ctx.response.status = 403
