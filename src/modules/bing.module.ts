@@ -34,6 +34,10 @@ class ServiceBing {
           ctx.response.redirect(data.cover || '')
           break
 
+        case 'uhd':
+          ctx.response.redirect(data.cover_4k || '')
+          break
+
         case 'json':
         default:
           ctx.response.body = Common.buildJson(data)
