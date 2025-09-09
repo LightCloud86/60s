@@ -58,6 +58,8 @@ rootRouter.get('/health', (ctx) => {
   ctx.response.body = 'ok'
 })
 
+// 在 rootRouter 的定义之后，appRouter 的定义之前，添加以下代码：
+
 const helpHtml = `
 <!DOCTYPE html>
 <html lang="zh-CN">
@@ -300,21 +302,26 @@ const helpHtml = `
         </section>
     </div>
     <footer>
-        <p>Lighthome | ${new Date().getFullYear()}</p>
+        <p>由 Viki 开发和维护 | ${new Date().getFullYear()}</p>
     </footer>
 </body>
 </html>
 `;
 
+rootRouter.get('/help', (ctx) => {
+  ctx.response.type = 'text/html; charset=utf-8'
+  ctx.response.body = helpHtml
+})
+
 var appRouter = new Router({
   prefix: "/v2"
 });
 
-// 新增 /help 路由
-appRouter.get("/help", (ctx) => {
-  ctx.response.type = "text/html; charset=utf-8";
-  ctx.response.body = helpHtml;
-});
+
+appRouter.get('/help', (ctx) => {
+  ctx.response.type = 'text/html; charset=utf-8'
+  ctx.response.body = helpHtml
+})
 
 appRouter.get('/60s', service60s.handle())
 appRouter.get('/answer', serviceAnswer.handle())
