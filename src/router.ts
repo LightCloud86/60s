@@ -66,7 +66,7 @@ const helpHtml = `
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>60s-Api - 帮助文档</title>
+    <title>帮助文档</title>
     <style>
         :root {
             --bg-color: #ffffff;
@@ -153,14 +153,13 @@ const helpHtml = `
 </head>
 <body>
     <header>
-        <h1>60s-Api</h1>
-        <p>一个简洁、有趣的免费 API 接口服务</p>
-        <p><a href="https://github.com/vikiboss/60s" target="_blank">GitHub</a> | <a href="https://docs.60s-api.viki.moe" target="_blank">文档</a></p>
+        <h1>API</h1>
+        <p>夜空的API接口</p>
     </header>
     <div class="container">
         <section>
             <h2>基本说明</h2>
-            <p>所有接口的根路径为：<code>https://api.viki.moe/v2</code></p>
+            <p>所有接口的根路径默认为：<code>/v2</code></p>
             <p>大部分 <code>GET</code> 接口支持一个通用查询参数 <code>encoding</code>，用于指定返回的数据格式。</p>
             <table>
                 <thead>
@@ -302,7 +301,7 @@ const helpHtml = `
         </section>
     </div>
     <footer>
-        <p>由 Viki 开发和维护 | ${new Date().getFullYear()}</p>
+        <p>Lighthome</p>
     </footer>
 </body>
 </html>
