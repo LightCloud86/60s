@@ -313,10 +313,9 @@ rootRouter.get('/help', (ctx) => {
   ctx.response.body = helpHtml
 })
 
-var appRouter = new Router({
-  prefix: "/v2"
-});
-
+export const appRouter = new Router({
+  prefix: '/v2',
+})
 
 appRouter.get('/help', (ctx) => {
   ctx.response.type = 'text/html; charset=utf-8'
